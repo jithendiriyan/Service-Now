@@ -1,0 +1,148 @@
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<h2 class="text-center mt-5 text-danger">General Service Form</h2>
+
+<form class="container mt-4" action="/book_general" method="POST">
+  <div class="row g-3">
+    <!-- Name, Email, Phone -->
+    <div class="col-md-4">
+      <label for="inputName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="inputName" name="name" placeholder="(eg: John Doe S)" value="{{ user.name if user else '' }}" required> 
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" id="inputEmail4" value="{{ user.email if user else '' }}" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" name="phone" placeholder="0123456789" value="{{ user.phone if user else '' }}" required>
+    </div>
+
+    <!-- Address -->
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" class="form-control" id="inputAddress" name="address1" placeholder="1234 Main Street" required>
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, floor, etc.">
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity" name="city">
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select" name="state">
+        <option selected>Choose...</option>
+        <option>Tamil Nadu</option>
+        <option>Kerala</option>
+        <option>Karnataka</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip" name="zip">
+    </div>
+
+    <!-- Vehicle Details -->
+    <div class="col-md-3">
+      <label for="inputVehicle" class="form-label">Vehicle</label>
+      <select id="inputVehicle" class="form-select" name="vehicle">
+        <option selected>Choose...</option>
+        <option>Bike</option>
+        <option>Scooter</option>
+        <option>Car</option>
+        <option>Truck</option>
+        <option>Auto/Rickshaw</option>
+        <option>E-Bike</option>
+        <option>E-Scooter</option>
+        <option>E-Car</option>
+        <option>E-Truck</option>
+        <option>E-Auto</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label for="inputReg" class="form-label">Register No</label>
+      <input type="text" class="form-control" id="inputReg" name="register_no" placeholder="(eg: TN XX XX XXXX)" style="text-transform: uppercase;" required>
+    </div>
+
+    <div class="col-md-2">
+      <label for="inputMake" class="form-label">Make</label>
+      <input type="text" class="form-control" id="inputMake" name="make" placeholder="(eg: BMW)" required>
+    </div>
+
+    <div class="col-md-2">
+      <label for="inputModel" class="form-label">Model</label>
+      <input type="text" class="form-control" id="inputModel" name="model" placeholder="(eg: 320i)" required>
+    </div>
+
+    <div class="col-md-2">
+      <label for="inputDistance" class="form-label">Distance Driven (km/h)</label>
+      <input type="text" class="form-control" id="inputDistance" name="distance" placeholder="(eg: 6500)" required>
+    </div>
+
+    <!-- General Service Info -->
+    <div class="col-12 mt-4">
+      <label class="form-label">General Service Info</label>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="complain" checked>
+            <label class="form-check-label">Engine Oil Check / Change / Top-up</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="complain" checked>
+            <label class="form-check-label">Engine Oil Filter Check / Change</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="complain" checked>
+            <label class="form-check-label">Air Filter Check / Change</label>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="complain" checked>
+            <label class="form-check-label">Brake Fluid Check / Change / Top-up</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="complain" checked>
+            <label class="form-check-label">Brake Shoe / Pad Check / Change</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="complain" checked>
+            <label class="form-check-label">Electrical Functions Check / Change</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Checkbox and Submit -->
+    <div class="col-12 mt-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="check" id="gridCheck" required>
+        <label class="form-check-label" for="gridCheck">
+          Confirm the above information is correct
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12 text-center mt-3">
+      <button type="submit" class="btn btn-danger px-5">Submit</button>
+    </div>
+  </div>
+</form>

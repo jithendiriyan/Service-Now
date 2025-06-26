@@ -1,0 +1,95 @@
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Title and Introduction -->
+<h1 class="text-center mt-4">Welcome to Service Now</h1>
+<p class="text-muted text-center">Book services for your vehicle with us.</p>
+
+<!-- Carousel Section -->
+<section id="carousel-section" class="my-4">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="{{ url_for('static', filename='assets/home_service.jpg') }}" class="img-fluid rounded mx-auto d-block"
+               style="height: 500px; object-fit: cover; width: 100%;"alt="Automotive service">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{{ url_for('static', filename='assets/home_service_2.jpg') }}" class="img-fluid rounded mx-auto d-block"
+               style="height: 500px; object-fit: cover; width: 100%;"alt="Automotive service">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='assets/home_service_3.jpg') }}" class="img-fluid rounded mx-auto d-block"
+               style="height: 500px; object-fit: cover; width: 100%;"alt="Automotive service">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services-section" class="container-fluid mt-5 px-5">
+  <h2 class="mb-4">Services</h2>
+  <div class="row g-4 justify-content-center">
+
+    <!-- General Service Card -->
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card h-100 p-3 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="text-center">General</h4>
+          <img src="{{ url_for('static', filename='assets/service-image-1.jpg') }}"
+               class="img-fluid rounded mx-auto d-block"
+               style="height: 200px; object-fit: cover;"
+               alt="General vehicle service">
+          <p class="mt-3 text-center">Basic services we offer for all clients.</p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a href="{{ url_for('book_general') }}" class="btn btn-danger">Book Now</a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Customize Service Card -->
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card h-100 p-3 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="text-center">Customize</h4>
+          <img src="{{ url_for('static', filename='assets/19396.jpg') }}"
+               class="img-fluid rounded mx-auto d-block"
+               style="height: 200px; object-fit: cover;"
+               alt="Customized service">
+          <p class="mt-3 text-center">Tailored solutions to fit your unique needs.</p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a href="{{ url_for('book_customize') }}" class="btn btn-danger">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speed X Service Card -->
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card h-100 p-3 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="text-center">Speed X</h4>
+          <img src="{{ url_for('static', filename='assets/43025.jpg') }}"
+               class="img-fluid rounded mx-auto d-block"
+               style="height: 200px; object-fit: cover;"
+               alt="Fast speed vehicle service">
+          <p class="mt-3 text-center">High-performance solutions for rapid delivery.</p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a href="{{ url_for('book_speed') }}" class="btn btn-danger">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
